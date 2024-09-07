@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "gendiff"
+version = "0.1.0"
+description = ""
+authors = ["Юлия Самсонова <samsonovajulias@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff_start:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
