@@ -1,8 +1,11 @@
 import json
 import yaml
+import os.path
 
 
-def read_file(file, format):
+def read_file(file):
+    file = os.path.abspath(file)
+    format = file.split('.')[-1]
     if format == 'json':
         with open(file) as my_file:
             return json.load(my_file)
@@ -30,11 +33,9 @@ def represent(same, minus, plus):
     return ans
 
 
-def find_difference(first_file, second_file, format=None):
-    if format is None:
-        format = first_file.split('.')[-1]
-    set1 = set(read_file(first_file, format).items())
-    set2 = set(read_file(second_file, format).items())
+def find_difference(first_file, second_file):
+    set1 = set(read_file(first_file).items())
+    set2 = set(read_file(second_file).items())
     same = [list(i) for i in set1.intersection(set2)]
     minus = [list(i) for i in (set1 - set2)]
     plus = [list(i) for i in (set2 - set1)]
