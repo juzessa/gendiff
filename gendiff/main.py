@@ -42,7 +42,3 @@ def find_difference(first_file, second_file):
     res = represent(same, minus, plus)
     return res
 
-
-# first_file = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file1.yml'
-# second_file = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file2.yml'
-# print(find_difference(first_file, second_file))
