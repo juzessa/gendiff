@@ -7,6 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+flake8 = "^7.1.1"
+pytest = "^8.3.3"
 
 [tool.poetry.scripts]
 gendiff = "gendiff.scripts.gendiff_start:main"
