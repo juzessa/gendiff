@@ -90,6 +90,6 @@ def find_difference(file1, file2, format="stylish"):
     formats[format](res)
 
 
-file1 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file3.json'
-file2 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file4.json'
-find_difference(file1, file2)
+#file1 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file3.json'
+#file2 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file4.json'
+#find_difference(file1, file2)
