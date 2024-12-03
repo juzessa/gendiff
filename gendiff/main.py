@@ -85,7 +85,6 @@ def find_difference(file1, file2, format="stylish"):
     res1 = read_file(file1)
     res2 = read_file(file2)
     res = make_difference(res1, res2)
-    print(res)
     formats = {"stylish": result_stylish}
     formats[format](res)
 
