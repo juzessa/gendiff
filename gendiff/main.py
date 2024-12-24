@@ -1,7 +1,7 @@
 import json
 import yaml
 import os.path
-from gendiff.styles.stylish_file import result_stylish
+from gendiff.styles.stylish_file import return_stylish
 
 
 def read_file(file):
@@ -16,7 +16,7 @@ def read_file(file):
 
 
 class Changes:
-    
+
     @staticmethod
     def added(key, value):
         return {
@@ -24,7 +24,7 @@ class Changes:
             'key': key,
             'value': value
         }
-    
+
     @staticmethod
     def deleted(key, value):
         return {
@@ -32,7 +32,7 @@ class Changes:
             'key': key,
             'value': value
         }
-    
+
     @staticmethod
     def nested(key, value1, value2):
         return {
@@ -48,14 +48,14 @@ class Changes:
             'key': key,
             'value': value
         }
-    
+
     @staticmethod
     def modified(key, value1, value2):
         return {
             'action': 'modified',
             'key': key,
-            'value1': value2,
-            'value2': value1
+            'value1': value1,
+            'value2': value2
         }
 
 
@@ -85,11 +85,5 @@ def find_difference(file1, file2, format="stylish"):
     res1 = read_file(file1)
     res2 = read_file(file2)
     res = make_difference(res1, res2)
-    print(res)
-    formats = {"stylish": result_stylish}
-    formats[format](res)
-
-
-file1 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file3.json'
-file2 = '/Users/juliasamsonova/Dev/gendiff/tests/fixtures/file4.json'
-find_difference(file1, file2)
+    formats = {"stylish": return_stylish}
+    return formats.get(format, formats['stylish'])(res)
